@@ -7,6 +7,8 @@ def __write():
         f.write(foo.SerializeToString())
 
 def read():
+    __write()
+
     with open('foo.pb', 'rb') as f:
         foo = Foo().FromString(f.read())
         print(foo)
